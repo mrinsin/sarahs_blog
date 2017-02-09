@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
+
   resources :books
+
+  resources :concerts
+
   devise_for :users
   root 'welcome#index'
   
