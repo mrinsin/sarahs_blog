@@ -16,3 +16,7 @@
  .navbar li {
   padding-right: 14px;
 }
+
+a {
+  color: gray;
+}
