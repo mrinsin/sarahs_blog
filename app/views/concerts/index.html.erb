@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h3>Concerts</h3>
+<h2>Concerts</h2>
 
   <% @concerts.each do |concert| %>
 
     <div class="concert">
-      <h3><a href='/concerts/<%= concert.id %>'><%= concert.title %></a></h3>
+      <h3><a href='/concerts/<%= concert.id %>' id="concert_title"><%= concert.title %></a></h3>
 
       <div class="row">
 
