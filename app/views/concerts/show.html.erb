@@ -10,5 +10,9 @@
   <%= @concert.review %>
 </p>
 
+<p>
+  <%= image_tag @concert.image.url(:large) %>
+</p>
+
 <% if user_signed_in? %><%= link_to 'Edit', edit_concert_path(@concert) %> |<% end %>
 <%= link_to 'Back', concerts_path %>

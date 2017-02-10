@@ -20,6 +20,10 @@
            <%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %>
          <% end %>
 
+         <p>
+           <%= image_tag concert.image.url(:large) %>
+         </p>
+
       </div>
     </div>
   </div>

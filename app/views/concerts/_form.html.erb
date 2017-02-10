@@ -1,4 +1,4 @@
-<%= form_for(concert) do |f| %>
+<%= form_for((concert), html: { multipart: true })  do |f| %>
   <% if concert.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
@@ -19,6 +19,11 @@
   <div class="field">
     <%= f.label :review %>
     <%= f.text_field :review %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </div>
 
   <div class="actions">
