@@ -15,6 +15,15 @@
  */
  .navbar li {
   padding-right: 14px;
+
+}
+body {
+  background-color: rgb(104,173,144) !important;
+  color: rgb(254,255,125) !important;
+}
+
+#book_title, #concert_title{
+  color: rgb(254,255,125)
 }
 
 a {
