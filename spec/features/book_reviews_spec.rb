@@ -17,7 +17,6 @@ RSpec.feature "BookReviews", type: :feature do
       end
       Then "I can create a new book review" do
         click_on "Books"
-        save_and_open_page
         click_on "New Book Review"
         fill_in "Title", with: "The Blues"
         fill_in "Review", with: "Great book"
