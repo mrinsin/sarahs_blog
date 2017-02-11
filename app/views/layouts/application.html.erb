@@ -17,9 +17,9 @@
   </head>
 
   <body>
-    <div class="container">
 
-      <nav class="navbar navbar-default" role="navigation">
+    <!-- navigation -->
+      <nav class="navbar navbar-inverse" role="navigation">
         <div class="container">
            <div class="navbar-header">
                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -32,7 +32,7 @@
              </div>
 
              <div class="collapse navbar-collapse" id="navbar-collapse-1">
-               <ul class="nav navbar-nav navbar-right">
+               <ul class="nav navbar-nav">
                  <li><%= link_to 'About Sarah' %></li>
                    <li><%= link_to 'Concerts', concerts_path %></li>
                    <li><%= link_to 'Books', books_path %></li>
@@ -45,7 +45,27 @@
              </div>
           </nav>
 
+    <div class="container">
       <%= yield %>
-  </div>
+    </div>
+
+  <div class="container">
+    <hr>
+
+       <!-- Footer -->
+       <footer>
+           <div class="row">
+             <div class="col-lg-5"> <p></p> </div>
+               <div class="col-lg-4">
+                   <p>Copyright &copy; Sarah Burnand</p>
+               </div>
+             <div class="col-lg-3"> <p></p> </div>
+           </div>
+       </footer>
+
+   </div>
+   <!-- /.container -->
+
+
   </body>
 </html>

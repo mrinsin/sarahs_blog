@@ -1,35 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<h2>Concerts</h2>
+<h1>Concert Reviews</h1>
 
-  <% @concerts.each do |concert| %>
+<!-- outermost row -->
+<div class="row">
 
-    <div class="concert">
-      <h3><a href='/concerts/<%= concert.id %>' id="concert_title"><%= concert.title %></a></h3>
-
-      <div class="row">
-
-       <div class="col-md-2">
-         <%= concert.review %>
-       </div>
-       <p></p>
-        <div class="col-md-4">
-
-         <% if current_user %>
-           <%= link_to 'Edit', edit_concert_path(concert) %>
-           <%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %>
-         <% end %>
-
-         <p>
-           <%= image_tag concert.image.url(:large) %>
-         </p>
-
-      </div>
+  <!-- image row -->
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-9">
+      <img src="app/assets/images/concerts.jpg" alt="concerts" style="height: 300px; width: 70%;">
     </div>
+    <div class="col-md-3"></div>
   </div>
+
+  <!-- concert reviews row -->
+  <div class="row">
+
+    <% @concerts.each do |concert| %>
+
+      <div class="col-sm-4 col-lg-4 col-md-4" >
+        <div class="thumbnail"  id="concerts">
+          <%= image_tag concert.image.url(:large), :class => "concert_image"  %>
+            <div class="caption">
+                <h4><a href='/concerts/<%= concert.id %>' id="concert_title"><%= concert.title %></a></h4>
+                <p> <%= concert.review %></p>
+            </div>
+            <div class="ratings">
+                <p class="pull-right">15 reviews</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+            <div class="row">
+                <p>
+                  <% if current_user %>
+                  <div class="col-md-2">
+                    <%= button_to 'Edit', edit_concert_path(concert), :class => "btn btn-success" %>
+                  </div>
+                  <div class="col-md-2">
+                   <%= button_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+                  </div>
+                  <div class="col-md-8"> <p></p>
+                  </div>
+                <% end %>
+                </p>
+            </div>
+          </div>
+        </div>
     <% end %>
+
+  </div>
+
+<!-- closing outermost row -->
+</div>
+
 <br>
 
 <% if current_user %>
-  <%= link_to 'New Concert Review', new_concert_path %>
+  <%= button_to 'New Concert Review', new_concert_path, :class => "btn btn-info" %>
 <% end %>
