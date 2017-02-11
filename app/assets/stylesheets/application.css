@@ -26,6 +26,26 @@ body {
   color: rgb(254,255,125)
 }
 
+
+#concerts {
+  background-color: rgb(104,173,144) !important;
+  color: rgb(254,255,125) !important;
+  margin-top: 15%;
+  min-height: 350px;
+}
+
+#concert_image {
+  margin-top: 8%;
+  margin-bottom: 4%;
+  max-height: 40%;
+  width: 60%;
+}
+
+
 a {
   color: gray;
+}
+
+h1 {
+  text-align: center;
 }
