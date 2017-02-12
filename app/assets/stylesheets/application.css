@@ -26,12 +26,13 @@ body {
   color: rgb(254,255,125)
 }
 
-
 #concerts {
   background-color: rgb(104,173,144) !important;
   color: rgb(254,255,125) !important;
   margin-top: 15%;
   min-height: 350px;
+  border-color: rgb(104,173,144) !important;
+
 }
 
 #concert_image {
