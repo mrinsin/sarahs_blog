@@ -36,7 +36,7 @@
                  <li><%= link_to 'About Sarah' %></li>
                    <li><%= link_to 'Concerts', concerts_path %></li>
                    <li><%= link_to 'Books', books_path %></li>
-                   <li><%= link_to 'Calendar'%></li>
+                   <li><%= link_to 'Calendar', '/welcome/calendar' %></li>
                    <% if current_user %>
                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
                    <% end %>
