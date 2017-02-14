@@ -20,6 +20,7 @@
 body {
   background-color: rgb(104,173,144) !important;
   color: rgb(254,255,125) !important;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 #book_title, #concert_title{
@@ -27,11 +28,17 @@ body {
 }
 
 #concerts {
-  background-color: rgb(104,173,144) !important;
-  color: rgb(254,255,125) !important;
+  background-color: rgb(104,170,140) !important;
+  color: rgb(254,255,125);
   margin-top: 15%;
   min-height: 350px;
+  max-width: 60%;
   border-color: rgb(104,173,144) !important;
+
+}
+
+#concerts p {
+  color: rgb(231, 232, 111) !important;
 
 }
 
@@ -44,9 +51,12 @@ body {
 
 
 a {
-  color: gray;
+  color: rgb(254,255,125);
+  background-color: #000;
+
 }
 
 h1 {
   text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
