@@ -19,11 +19,16 @@
 
  .navbar li {
   padding-right: 14px;
-  font-size: 18px;
+  font-size: 22px;
+  margin-top: 3px;
   font-family: 'Open Sans Condensed', sans-serif;
-
-
 }
+
+.navbar .navbar-brand {
+  font-size: 28px;
+  margin-bottom: 7px;
+}
+
 body {
   background-color: rgb(104,173,144) !important;
   color: rgb(254,255,125) !important;
@@ -45,6 +50,7 @@ body {
   margin-top: 15%;
   max-width: 70%;
   border-color: rgb(104,173,144) !important;
+  margin-left: 12px;
 
 }
 
@@ -60,8 +66,8 @@ body {
 #concert_image {
   margin-top: 8%;
   margin-bottom: 4%;
-  max-height: 40%;
-  width: 60%;
+  height: 50%;
+  width: 100%;
 }
 
 
