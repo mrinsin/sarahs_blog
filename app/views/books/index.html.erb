@@ -23,10 +23,10 @@
         <div class="thumbnail" id="concerts">
           <a href='/books/<%= book.id %>' id="book_title"><%= image_tag book.image.url(:large), :class => "book_image"  %></a>
             <div class="caption">
-                <h4><a href='/books/<%= book.id %>' id="book_title"><%= book.title %></a></h4>
+                <h2><a href='/books/<%= book.id %>' id="book_title"><%= book.title %></a></h2>
                 <p>
-                  <% if book.review.length > 190 %>
-                    <%= truncate(book.review, length: 190) %>
+                  <% if book.review.length > 150 %>
+                    <%= truncate(book.review, length: 150) %>
                     <%= link_to '...Read more', book_path(book), class: "read-more-#{book.id}" %>
                   <% else %>
                     <%= book.review %>
@@ -34,7 +34,6 @@
                 </p>
             </div>
             <div class="ratings">
-                <p class="pull-right">15 reviews</p>
                 <p>
                     <span class="glyphicon glyphicon-star"></span>
                     <span class="glyphicon glyphicon-star"></span>

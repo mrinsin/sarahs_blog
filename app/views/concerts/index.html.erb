@@ -23,10 +23,10 @@
         <div class="thumbnail" id="concerts">
           <a href='/concerts/<%= concert.id %>'><%= image_tag concert.image.url(:large), :class => "concert_image"  %> </a>
             <div class="caption">
-                <a href='/concerts/<%= concert.id %>'><h4 id="concert_title"><%= concert.title %></a></h4>
+                <a href='/concerts/<%= concert.id %>'><h2 id="concert_title"><%= concert.title %></a></h2>
                 <p>
-                  <% if concert.review.length > 190 %>
-                    <%= truncate(concert.review, length: 190) %>
+                  <% if concert.review.length > 150 %>
+                    <%= truncate(concert.review, length: 150) %>
                     <%= link_to '...Read more', concert_path(concert), class: "read-more-#{concert.id}" %>
                   <% else %>
                     <%= concert.review %>
@@ -34,7 +34,6 @@
                 </p>
             </div>
             <div class="ratings">
-                <p class="pull-right">15 reviews</p>
                 <p>
                     <span class="glyphicon glyphicon-music"></span>
                     <span class="glyphicon glyphicon-music"></span>
