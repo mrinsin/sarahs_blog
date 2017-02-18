@@ -1,9 +1,12 @@
-<% @events.each do |event| %>
 
-  <p><%= event.name %></p>
+<!-- <% @events.each do |event| %>
 
-  <% end %>
+  <%= event.name %>
 
+  <% end %> -->
 
   <div id="calendar">
+   <% @events.each do |event| %>
+   <%= event.name %>
+   <% end %>
   </div>

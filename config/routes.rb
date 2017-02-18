@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
 
+  #generates /concerts/get_events route
   resources :events do
     get :get_events, on: :collection
   end
+
+
   resources :books
 
   resources :concerts

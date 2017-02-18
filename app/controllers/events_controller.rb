@@ -4,16 +4,18 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @event = Event.all
   end
-
+  #
   def get_events
-    @events = Event.all
+    @event = Event.all
     events = []
-    @events.each do |event|
-      events << { id: event.id, title: event.name}
+    @event.each do |event|
+      events << { id: event.id, title: event.name, start: event.start_time, end: event.end_time}
     end
     render :json => events.to_json
+
+
   end
 
   # GET /events/1
