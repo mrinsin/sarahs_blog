@@ -16,8 +16,9 @@ RSpec.describe Concert, type: :model do
                             title: "RHCP",
                             review: "Loads of fun",
                             image: Rack::Test::UploadedFile.new('app/assets/images/1.jpg'))
+    first_concert.save
 
-    second_concert = Concert.find_by(first_concert.id)
+    second_concert = Concert.find(first_concert.id)
 
     expect(second_concert.title).to eq "RHCP"
     expect(second_concert.review).to eq "Loads of fun"

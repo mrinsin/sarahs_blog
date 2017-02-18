@@ -5,7 +5,7 @@ RSpec.feature "ConcertTestings", type: :feature do
     Steps "To add  book review" do
 
       Given "I am a registered user" do
-        visit '/'
+        visit '/users/sign_up'
         click_on "Sign up"
         fill_in "Email", with: "mrin@sin.com"
         fill_in "Password", with: "mrinsin"
