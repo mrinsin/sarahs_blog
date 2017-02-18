@@ -4,7 +4,7 @@ RSpec.feature "BookReviews", type: :feature do
   context "creating book reviews" do
     Steps "to add a book review" do
       Given "I am registered user" do
-        visit "/"
+        visit "/users/sign_up"
         click_on "Sign up"
         fill_in "Email", with: "j@j.com"
         fill_in "Password", with: "jessica"
