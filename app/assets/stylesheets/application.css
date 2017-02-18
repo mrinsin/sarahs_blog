@@ -19,11 +19,16 @@
 
  .navbar li {
   padding-right: 14px;
-  font-size: 18px;
+  font-size: 22px;
+  margin-top: 3px;
   font-family: 'Open Sans Condensed', sans-serif;
-
-
 }
+
+.navbar .navbar-brand {
+  font-size: 28px;
+  margin-bottom: 7px;
+}
+
 body {
   background-color: rgb(104,173,144) !important;
   color: rgb(254,255,125) !important;
