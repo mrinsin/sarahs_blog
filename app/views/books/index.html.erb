@@ -9,7 +9,7 @@
   <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-9">
-      <img src="concerts.jpg" alt="concerts" style="height: 20%; width: 70%;">
+      <img src="concerts.jpg" alt="books" style="height: 10%; width: 60%;">
     </div>
     <div class="col-md-3"></div>
   </div>
@@ -21,10 +21,17 @@
 
       <div class="col-sm-4 col-lg-4 col-md-4" >
         <div class="thumbnail" id="concerts">
-          <a href='/books/<%= book.id %>' id="book_title"><%= image_tag book.image.url(:large), :class => "concert_image"  %></a>
+          <a href='/books/<%= book.id %>' id="book_title"><%= image_tag book.image.url(:large), :class => "book_image"  %></a>
             <div class="caption">
                 <h4><a href='/books/<%= book.id %>' id="book_title"><%= book.title %></a></h4>
-                <p> <%= book.review %></p>
+                <p>
+                  <% if book.review.length > 190 %>
+                    <%= truncate(book.review, length: 190) %>
+                    <%= link_to '...Read more', book_path(book), class: "read-more-#{book.id}" %>
+                  <% else %>
+                    <%= book.review %>
+                  <% end %>
+                </p>
             </div>
             <div class="ratings">
                 <p class="pull-right">15 reviews</p>

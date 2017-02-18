@@ -24,7 +24,14 @@
           <a href='/concerts/<%= concert.id %>'><%= image_tag concert.image.url(:large), :class => "concert_image"  %> </a>
             <div class="caption">
                 <a href='/concerts/<%= concert.id %>'><h4 id="concert_title"><%= concert.title %></a></h4>
-                <p> <%= concert.review %></p>
+                <p>
+                  <% if concert.review.length > 190 %>
+                    <%= truncate(concert.review, length: 190) %>
+                    <%= link_to '...Read more', concert_path(concert), class: "read-more-#{concert.id}" %>
+                  <% else %>
+                    <%= concert.review %>
+                  <% end %>
+                </p>
             </div>
             <div class="ratings">
                 <p class="pull-right">15 reviews</p>
