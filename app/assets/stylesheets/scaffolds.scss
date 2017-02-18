@@ -13,20 +13,24 @@ h1 {
 
 p, ol, ul, td {
   color: rgb(254,255,125) !important;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 18px;
   margin: 33px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
+  font-size: 14px;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 a {
   color: rgb(254,255,125);
   background-color: #000;
+  font-family: 'Open Sans Condensed', sans-serif;
+
 
 
   &:visited {
