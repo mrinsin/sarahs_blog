@@ -1,2 +1,26 @@
-<h3>HI SARAH I HEART U! </h3>
-<p>  Live feed coming soon....</p>
+<h1>Latest blog posts</h1>
+
+<div class="row">
+
+  <div class="col-md-6">
+
+    <% @concerts.limit(4).each do |concert| %>
+
+    <h2><%= concert.title %></h2>
+
+  <% end %>
+    </div>
+
+  <div class="col-md-6">
+
+    <% @books.limit(4).each do |book| %>
+
+    <h2><%= book.title %></h2>
+
+    <% end %>
+
+  </div>
+
+
+
+</div>
