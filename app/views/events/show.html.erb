@@ -2,12 +2,12 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @event.name %>
+  <%= @event.title %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= @event.date %>
+  <%= @event.start_time %>
 </p>
 
 <p>
@@ -20,5 +20,5 @@
   <%= @event.address %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Edit', edit_event_path(@events) %> |
 <%= link_to 'Back', events_path %>
