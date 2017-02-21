@@ -47,7 +47,7 @@
             <td>
               <a href="/books/<%= book.id %>">
                 <hr>
-                <%= image_tag book.image.url(:large), :class => "book_image", :style => "float: left; margin-right: 12px; max-height: 70%; min-width: 25%;" %>
+                <%= image_tag book.image.url(:large), :class => "book_image", :style => "float: left; margin-right: 12px; margin-bottom: 5px; max-height: 65%; min-width: 25%;" %>
               <h2 class="cinzel"></strong><%= book.title %></strong></h2>
               <h4>
                 <% if book.review.length > 150 %>
