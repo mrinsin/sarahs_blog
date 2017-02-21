@@ -26,7 +26,7 @@
         <div class="thumbnail" id="concerts">
           <a href='/concerts/<%= concert.id %>'><%= image_tag concert.image.url(:large), :class => "concert_image"  %> </a>
             <div class="caption">
-                <a href='/concerts/<%= concert.id %>'><h2 id="concert_title"><%= concert.title %></a></h2>
+                <a href='/concerts/<%= concert.id %>'><h2 class="concert_review_title"><%= concert.title %></a></h2>
                 <p>
                   <% if concert.review.length > 150 %>
                     <%= truncate(concert.review, length: 150) %>
