@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1 class="cinzel">Book Reviews</h1>
+                        <h1 class="cinzel"><strong>Book Reviews</strong></h1>
                     </div>
                 </div>
             </div>
@@ -30,13 +30,13 @@
             <hr>
             <a href='/books/<%= book.id %>'>
             <div class="col-lg-3">
-              <%= image_tag book.image.url(:large), :class => "book_image"  %>
+              <%= image_tag book.image.url(:large), :class => "concert_image"  %>
             </div>
 
 
 
         <div class="col-lg-9">
-                  <h2 class="cinzel"><%= book.title %></h2>
+                  <h2 class="cinzel"><strong><%= book.title %></strong></h2>
                   <h4>
                     <% if book.review.length > 150 %>
                       <%= truncate(book.review, length: 150) %>
