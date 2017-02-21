@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Book Reviews</h1>
+                        <h1 class="cinzel">Book Reviews</h1>
                     </div>
                 </div>
             </div>
@@ -19,58 +19,49 @@
     </header>
 
   <!-- book reviews row -->
-  <div class="row">
+  <div id="live_feed">
 
-    <% @books.each do |book| %>
+    <div class="row">
+      <div class="col-md-10">
+      <% @books.each do |book| %>
+      <table align="center">
+        <tr>
+          <td>
+            <hr>
+            <a href='/books/<%= book.id %>'>
+            <div class="col-lg-3">
+              <%= image_tag book.image.url(:large), :class => "book_image"  %>
+            </div>
 
-      <div class="col-sm-4 col-lg-4 col-md-4" >
-        <div class="thumbnail" id="concerts">
-          <a href='/books/<%= book.id %>' id="concert_title"><%= image_tag book.image.url(:large), :class => "concert_image"  %></a>
-            <div class="caption">
-                <h2><a href='/books/<%= book.id %>' id="book_title"><%= book.title %></a></h2>
-                <p>
-                  <% if book.review.length > 150 %>
-                    <%= truncate(book.review, length: 150) %>
-                    <%= link_to '...Read more', book_path(book), class: "read-more-#{book.id}" %>
-                  <% else %>
-                    <%= book.review %>
-                  <% end %>
-                </p>
-            </div>
-            <div class="ratings">
-                <p>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                    <span class="glyphicon glyphicon-star"></span>
-                </p>
-            </div>
-            <div class="row">
-                <p>
-                  <% if current_user %>
-                  <div class="col-md-3">
-                    <%= link_to 'Edit', edit_book_path(book), :class => "btn btn-success" %>
-                  </div>
-                  <div class="col-md-3">
-                   <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
-                  </div>
-                  <div class="col-md-6"> <p></p>
-                  </div>
-                <% end %>
-                </p>
-            </div>
-          </div>
-        </div>
-    <% end %>
+
+
+        <div class="col-lg-9">
+                  <h2 class="cinzel"><%= book.title %></h2>
+                  <h4>
+                    <% if book.review.length > 150 %>
+                      <%= truncate(book.review, length: 150) %>
+                      <%= link_to '...Read more', book_path(book), class: "read-more-#{book.id}" %>
+                    <% else %>
+                      <%= book.review %>
+                    <% end %>
+                  </h4>
+                </a></td>
+              </tr>
+            </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 
   </div>
+  <div class="row">
+    <div class="col-lg-3">
+      <% if current_user %>
+        <%= link_to 'New Book Review', new_book_path, :class => "btn btn-info", :style => "margin-top: 15px;" %>
+      <% end %>
+  </div>
+</div>
 
 <!-- closing outermost row -->
 </div>
-
-<br>
-
-<% if current_user %>
-  <%= link_to 'New Book Review', new_book_path, :class => "btn btn-info" %>
-<% end %>

@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Concert Reviews</h1>
+                        <h1 class="cinzel">Concert Reviews</h1>
                     </div>
                 </div>
             </div>
@@ -18,58 +18,48 @@
     </header>
 
   <!-- concert reviews row -->
-  <div class="row">
+  <div id="live_feed">
 
-    <% @concerts.each do |concert| %>
+    <div class="row">
+      <div class="col-md-10">
+      <% @concerts.each do |concert| %>
+      <table align="center">
+        <tr>
+          <td>
+            <hr>
+            <a href='/concerts/<%= concert.id %>'>
+            <div class="col-lg-3">
+              <%= image_tag concert.image.url(:large), :class => "concert_image"  %>
+            </div>
 
-      <div class="col-sm-4 col-lg-4 col-md-4" >
-        <div class="thumbnail" id="concerts">
-          <a href='/concerts/<%= concert.id %>'><%= image_tag concert.image.url(:large), :class => "concert_image"  %> </a>
-            <div class="caption">
-                <a href='/concerts/<%= concert.id %>'><h2 class="concert_review_title"><%= concert.title %></a></h2>
-                <p>
-                  <% if concert.review.length > 150 %>
-                    <%= truncate(concert.review, length: 150) %>
-                    <%= link_to '...Read more', concert_path(concert), class: "read-more-#{concert.id}" %>
-                  <% else %>
-                    <%= concert.review %>
-                  <% end %>
-                </p>
-            </div>
-            <div class="ratings">
-                <p>
-                    <span class="glyphicon glyphicon-music"></span>
-                    <span class="glyphicon glyphicon-music"></span>
-                    <span class="glyphicon glyphicon-music"></span>
-                    <span class="glyphicon glyphicon-music"></span>
-                    <span class="glyphicon glyphicon-music"></span>
-                </p>
-            </div>
-            <div class="row">
-                <p>
-                  <% if current_user %>
-                  <div class="col-md-3">
-                    <%= link_to 'Edit', edit_concert_path(concert), :class => "btn btn-success" %>
-                  </div>
-                  <div class="col-md-3">
-                   <%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
-                  </div>
-                  <div class="col-md-6"> <p></p>
-                  </div>
-                <% end %>
-                </p>
-            </div>
-          </div>
-        </div>
+
+
+        <div class="col-lg-9">
+                  <h2 class="cinzel"><%= concert.title %></h2>
+                  <h4>
+                    <% if concert.review.length > 150 %>
+                      <%= truncate(concert.review, length: 150) %>
+                      <%= link_to '...Read more', concert_path(concert), class: "read-more-#{concert.id}" %>
+                    <% else %>
+                      <%= concert.review %>
+                    <% end %>
+                  </h4>
+                </a></td>
+              </tr>
+            </table>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-lg-3">
+    <% if current_user %>
+      <%= link_to 'New Concert Review', new_concert_path, :class => "btn btn-info", :style => "margin-top: 15px;" %>
     <% end %>
-
+</div>
   </div>
 
 <!-- closing outermost row -->
 </div>
-
-<br>
-
-<% if current_user %>
-  <%= link_to 'New Concert Review', new_concert_path, :class => "btn btn-info" %>
-<% end %>
