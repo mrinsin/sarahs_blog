@@ -21,18 +21,21 @@
   padding-right: 14px;
   font-size: 22px;
   margin-top: 3px;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Sansita', sans-serif ;
 }
 
 .navbar .navbar-brand {
+  font-family: 'Sansita', sans-serif !important;
+  color: rgb(254,255,125) !important;
   font-size: 28px;
   margin-bottom: 7px;
 }
 
+
 body {
   background-color: rgb(104,173,144) !important;
   color: rgb(254,255,125) !important;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Alegreya', serif !important;
 }
 
 #book_title, #concert_title{
@@ -72,14 +75,13 @@ body {
 
 
 a {
-  color: rgb(254,255,125);
+  color: rgb(254,255,125) !important;
   background-color: #000;
 
 }
 
 h1, h2, h4 {
   text-align: center;
-  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .intro-header {
@@ -120,7 +122,6 @@ h1, h2, h4 {
   font-size: 24px;
   line-height: 1.1;
   display: block;
-  font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 300;
   margin: 10px 0 0;
 }
@@ -139,13 +140,11 @@ h1, h2, h4 {
   display: block;
 }
 .intro-header .post-heading .subheading {
-  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 24px;
   margin: 10px 0 30px;
   font-weight: 600;
 }
 .intro-header .post-heading .meta {
-  font-family: 'Open Sans Condensed', sans-serif;
   font-style: italic;
   font-weight: 300;
   font-size: 20px;
@@ -172,4 +171,9 @@ h1, h2, h4 {
   margin-left: 10px !important;
   margin-right: 10px !important;
   margin-top: 20px !important;
+}
+
+#concert_review_title {
+  font-family:  'Alegreya', serif !important;
+  text-align: left !important;
 }

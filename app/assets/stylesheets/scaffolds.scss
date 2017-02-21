@@ -7,16 +7,17 @@ body {
 }
 
 
-h1 {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
 
 p, ol, ul, td {
   color: rgb(254,255,125) !important;
   font-size: 18px;
   line-height: 18px;
   margin: 33px;
+}
+
+ol, ul {
   font-family: 'Open Sans Condensed', sans-serif;
+  color: white !important;
 }
 
 pre {
@@ -28,20 +29,10 @@ pre {
 
 a {
   color: rgb(254,255,125);
-  background-color: #000;
-  font-family: 'Open Sans Condensed', sans-serif;
-
-
 
   &:visited {
-    color: rgb(254,255,125);
-    background-color: #000;
+    color: rgb(250,255,125);
 
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
   }
 }
 
