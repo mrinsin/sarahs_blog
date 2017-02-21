@@ -40,10 +40,9 @@
 
              <div class="collapse navbar-collapse" id="navbar-collapse-1">
                <ul class="nav navbar-nav">
-                 <li><%= link_to 'About' %></li>
+                 <li><%= link_to 'About', '/welcome/about      ' %></li>
                    <li><%= link_to 'Concerts', concerts_path %></li>
                    <li><%= link_to 'Books', books_path %></li>
-                   <li><%= link_to 'Calendar', '/welcome/calendar' %></li>
                    <% if current_user %>
                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
                    <% end %>
@@ -62,11 +61,11 @@
        <!-- Footer -->
        <footer>
            <div class="row">
-             <div class="col-lg-5"> <p></p> </div>
-               <div class="col-lg-4">
+             <div class="col-lg-2"> <p></p> </div>
+               <div class="col-lg-8">
                    <p>Copyright &copy; Coastal Culture</p>
                </div>
-             <div class="col-lg-3"> <p></p> </div>
+             <div class="col-lg-2"> <p></p> </div>
            </div>
        </footer>
 
