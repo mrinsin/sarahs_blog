@@ -23,4 +23,8 @@ class WelcomeController < ApplicationController
     @events = Event.all
   end
 
+  def about
+    
+  end
+
 end
