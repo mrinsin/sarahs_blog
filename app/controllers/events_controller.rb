@@ -1,26 +1,23 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  # validates :title, presence: true, uniqueness: true
+  # validates :start_time, presence: true
 
   # GET /events
   # GET /events.json
   def index
-    @event = Event.all
+    @events = Event.all
   end
+
+
   #
-  def get_events
-    @event = Event.all
-    events = []
-    @event.each do |event|
-      events << { id: event.id, title: event.name, start: event.start_time, end: event.end_time}
-    end
-    render :json => events.to_json
 
-
-  end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @events = Event.all
+    redirect_to 'welcome/calendar'
   end
 
   # GET /events/new
@@ -75,11 +72,11 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      @events = Event.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :date, :description, :address)
+      params.require(:event).permit(:title, :start_time, :description, :address)
     end
 end
