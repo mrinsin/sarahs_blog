@@ -80,6 +80,10 @@ a {
 
 }
 
+a:visited {
+  text-decoration: none !important;
+}
+
 h1, h2, h4 {
   text-align: center;
 
