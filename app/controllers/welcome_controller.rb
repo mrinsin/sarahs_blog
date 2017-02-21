@@ -1,7 +1,12 @@
 class WelcomeController < ApplicationController
 
   def index
+
     @events = Event.all
+
+    @concerts = Concert.order 'created_at DESC'
+    @books = Book.order 'created_at DESC'
+
   end
 
   def get_events

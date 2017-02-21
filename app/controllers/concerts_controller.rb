@@ -14,7 +14,9 @@ class ConcertsController < ApplicationController
 
   # GET /concerts/new
   def new
-    @concert = Concert.new
+    if current_user
+      @concert = Concert.new
+    end
   end
 
   # GET /concerts/1/edit
