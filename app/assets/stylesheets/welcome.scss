@@ -12,7 +12,7 @@
 
 .live_feed a {
   color: rgb(250,255,125);
-  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: left !important;
   text-decoration: none !important;
   background-color: rgb(104,173,144) !important;
 
@@ -30,6 +30,10 @@
     text-decoration: none  !important;
     background-color: rgb(104,173,144) !important;
 
+  }
+
+  h1, h2 {
+    font-family:  'Cinzel', serif !important;
   }
 
 .live_feed {
