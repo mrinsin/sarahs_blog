@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
 
   #generates /concerts/get_events route
-  resources :events
-  #generates /concerts/get_events route
   resources :events do
     get :get_events, on: :collection
   end
@@ -23,9 +21,10 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  get 'welcome/calendar'
+
 
   get 'welcome/about'
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

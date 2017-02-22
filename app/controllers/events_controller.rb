@@ -7,6 +7,24 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+
+  end
+
+
+  def get_events
+    events = Event.all
+    get_events = []
+    events.each do |event|
+      get_events << {
+       id: event.id,
+       title: event.title,
+       start: event.start_time,
+       allDay: true,
+       url: '/events/' + event.id.to_s
+       # create url so you can click on a specific event and be taken to that page
+      }
+    end
+    render :json => get_events.to_json
   end
 
 
@@ -17,7 +35,7 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @events = Event.all
-    redirect_to 'welcome/calendar'
+
   end
 
   # GET /events/new
@@ -36,7 +54,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to '/events', notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -50,7 +68,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to '/events', notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -72,7 +90,7 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @events = Event.find(params[:id])
+      @event = Event.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
