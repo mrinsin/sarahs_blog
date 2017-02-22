@@ -9,6 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= csrf_meta_tags %>
+    
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
@@ -43,7 +44,7 @@
                  <li><%= link_to 'About' %></li>
                    <li><%= link_to 'Concerts', concerts_path %></li>
                    <li><%= link_to 'Books', books_path %></li>
-                   <li><%= link_to 'Calendar', '/welcome/calendar' %></li>
+                   <li><%= link_to 'Calendar', '/events' %></li>
                    <% if current_user %>
                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
                    <% end %>
