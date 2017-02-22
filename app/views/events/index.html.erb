@@ -5,11 +5,8 @@
 
 
 
-<div id="calendar" class="tab-pane fade in active">
-  <!-- <% @events.each do |event| %>
-    <%= event.title %>
-    <%= event.start_time %>
-  <% end %>
+<!-- <div id="calendar" class="tab-pane fade in active"> -->
+
 <table>
   <thead>
     <tr>
@@ -28,6 +25,7 @@
         <td class="th"><%= event.start_time %></td>
         <td class="th"><%= event.description %></td>
         <td class="th"><%= event.address %></td>
+
         <td><%= link_to 'Show', event %></td>
           <td><%= link_to 'Edit', edit_event_path(event) %></td>
           <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -37,7 +35,7 @@
   </tbody>
 </table>
 </div>
-<br> -->
-</div>
+<br>
 
-<%= link_to 'New Event', new_event_path %>
+
+<div class="new"><%= link_to 'New Event', new_event_path %></div>
