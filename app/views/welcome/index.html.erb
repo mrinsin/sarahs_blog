@@ -1,7 +1,19 @@
-<div id="live_feed">
-  <h1 class="cinzel">What's new</h1>
 
   <div class="row">
+
+    <header class="intro-header" style="background-image: url(/live.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1 class="cinzel"><strong>What's New</strong></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="live_feed">
 
       <div class="col-lg-6">
         <h1 class="cinzel">Concerts</h1>
@@ -12,7 +24,7 @@
                 <a href="/concerts/<%= concert.id %>">
                   <hr>
                   <%= image_tag concert.image.url(:large), :class => "concert_image", :style => "float: left; margin-right: 12px; max-height: 70%; min-width: 25%;" %>
-                <h2 class="cinzel"><%= concert.title %></h2>
+                <h2 class="cinzel"><strong><%= concert.title %></strong></h2>
                 <h4>
                   <% if concert.review.length > 150 %>
                     <%= truncate(concert.review, length: 150) %>
@@ -35,8 +47,8 @@
             <td>
               <a href="/books/<%= book.id %>">
                 <hr>
-                <%= image_tag book.image.url(:large), :class => "book_image", :style => "float: left; margin-right: 12px; max-height: 70%; min-width: 25%;" %>
-              <h2 class="cinzel"><%= book.title %></h2>
+                <%= image_tag book.image.url(:large), :class => "book_image", :style => "float: left; margin-right: 12px; margin-bottom: 5px; max-height: 65%; min-width: 25%;" %>
+              <h2 class="cinzel"></strong><%= book.title %></strong></h2>
               <h4>
                 <% if book.review.length > 150 %>
                   <%= truncate(book.review, length: 150) %>

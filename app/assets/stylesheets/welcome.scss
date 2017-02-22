@@ -39,3 +39,32 @@
 .live_feed {
   color: rgb(254,255,125) !important;
 }
+
+
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 85%;
+    left: 0;
+    width: 100%;
+    color: rgb(254,255,125) !important;
+}
+
+.thumbnail {
+  border-color: rgb(104,173,144) !important;
+  background-color: rgb(104,173,144) !important;
+}
+
+p {
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.2
+}
+
+.img-responsive {
+  height: 600px !important;
+  border-radius: 34px
+}
