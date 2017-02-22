@@ -1,26 +1,41 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  # validates :title, presence: true, uniqueness: true
+  # validates :start_time, presence: true
 
   # GET /events
   # GET /events.json
   def index
-    @event = Event.all
+    @events = Event.all
+
   end
-  #
+
+
   def get_events
-    @event = Event.all
-    events = []
-    @event.each do |event|
-      events << { id: event.id, title: event.name, start: event.start_time, end: event.end_time}
+    events = Event.all
+    get_events = []
+    events.each do |event|
+      get_events << {
+       id: event.id,
+       title: event.title,
+       start: event.start_time,
+       allDay: true,
+       url: '/events/' + event.id.to_s
+       # create url so you can click on a specific event and be taken to that page
+      }
     end
-    render :json => events.to_json
-
-
+    render :json => get_events.to_json
   end
+
+
+  #
+
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @events = Event.all
+
   end
 
   # GET /events/new
@@ -39,7 +54,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to '/events', notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -53,7 +68,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to '/events', notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -80,6 +95,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :date, :description, :address)
+      params.require(:event).permit(:title, :start_time, :description, :address)
     end
 end

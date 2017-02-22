@@ -10,10 +10,8 @@
 
     <%= csrf_meta_tags %>
 
-
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css?family=Alegreya|Cinzel|Sansita" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -41,11 +39,10 @@
 
              <div class="collapse navbar-collapse" id="navbar-collapse-1">
                <ul class="nav navbar-nav">
-                 <li><%= link_to 'About', '/welcome/about      ' %></li>
+                 <li><%= link_to 'About' %></li>
                    <li><%= link_to 'Concerts', concerts_path %></li>
                    <li><%= link_to 'Books', books_path %></li>
-                   <li><%= link_to 'Calendar', '/events' %></li>
-
+                   <li><%= link_to 'Calendar', '/welcome/calendar' %></li>
                    <% if current_user %>
                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
                    <% end %>
@@ -64,11 +61,11 @@
        <!-- Footer -->
        <footer>
            <div class="row">
-             <div class="col-lg-2"> <p></p> </div>
-               <div class="col-lg-8">
-                   <p>Copyright &copy; Coastal Culture</p>
+             <div class="col-lg-5"> <p></p> </div>
+               <div class="col-lg-4">
+                   <p>Copyright &copy; Sarah Burnand</p>
                </div>
-             <div class="col-lg-2"> <p></p> </div>
+             <div class="col-lg-3"> <p></p> </div>
            </div>
        </footer>
 

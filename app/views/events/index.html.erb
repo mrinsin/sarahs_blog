@@ -1,17 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>Events</h1>
 
 
 
-
+<div id="calendar" class="tab-pane fade in active">
+  <!-- <% @events.each do |event| %>
+    <%= event.title %>
+    <%= event.start_time %>
+  <% end %>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Address</th>
+      <th class="th">Title</th>
+      <th class="th">Start Time</th>
+      <th class="th">Description</th>
+      <th class="th">Address</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,18 +24,20 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.name %></td>
-        <td><%= event.date %></td>
-        <td><%= event.description %></td>
-        <td><%= event.address %></td>
+        <td class="th"><%= event.title %></td>
+        <td class="th"><%= event.start_time %></td>
+        <td class="th"><%= event.description %></td>
+        <td class="th"><%= event.address %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
+</div>
+<br> -->
+</div>
 
 <%= link_to 'New Event', new_event_path %>
