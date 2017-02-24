@@ -1,0 +1,103 @@
+
+  <div class="row">
+
+    <header class="intro-header" style="background-image: url(/concerts.png)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1 class="cinzel"><strong>Search Results</strong></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="live_feed">
+      <% if @concert_results.length > 0 %>
+        <div class="col-lg-6">
+          <h1 class="cinzel">Concert Reviews</h1>
+          <% @concert_results.each do |concert| %>
+            <table>
+              <tr>
+                <td>
+                  <a href="/concerts/<%= concert.id %>">
+                    <hr>
+                    <%= image_tag concert.image.url(:large), :class => "concert_image", :style => "float: left; margin-right: 12px; max-height: 70%; min-width: 25%;" %>
+                  <h2 class="cinzel"><strong><%= concert.title %></strong></h2>
+                  <h4>
+                    <% if concert.review.length > 165 %>
+                      <%= truncate(concert.review, length: 165) %>
+                      <%= link_to '...Read more', concert_path(concert), class: "read-more-#{concert.id}" %>
+                    <% else %>
+                      <%= concert.review %>
+                    <% end %>
+                  </h4>
+                </a></td>
+              </tr>
+            </table>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% if @book_results.length > 0 %>
+      <div class="col-lg-6">
+        <h1 class="cinzel">Book Reviews</h1>
+        <% @book_results.each do |book| %>
+          <table>
+            <tr>
+              <td>
+                <a href="/book/<%= book.id %>">
+                  <hr>
+                  <%= image_tag book.image.url(:large), :class => "concert_image", :style => "float: left; margin-right: 12px; max-height: 70%; min-width: 25%;" %>
+                <h2 class="cinzel"><strong><%= book.title %></strong></h2>
+                <h4>
+                  <% if book.review.length > 165 %>
+                    <%= truncate(book.review, length: 165) %>
+                    <%= link_to '...Read more', book_path(book), class: "read-more-#{book.id}" %>
+                  <% else %>
+                    <%= book.review %>
+                  <% end %>
+                </h4>
+              </a></td>
+            </tr>
+          </table>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <% if @event_results.length > 0 %>
+      <div class="col-lg-6">
+        <h1 class="cinzel">Events</h1>
+        <% @event_results.each do |event| %>
+          <table>
+            <tr>
+              <td>
+                <a href="/event/<%= event.id %>">
+                  <hr>
+                <h2 class="cinzel"><strong><%= event.title %></strong></h2>
+                <h4>
+                  <% if event.description.length > 165 %>
+                    <%= truncate(event.description, length: 165) %>
+                    <%= link_to '...Read more', event_path(event), class: "read-more-#{event.id}" %>
+                  <% else %>
+                    <%= event.description %>
+                  <% end %>
+                </h4>
+                <h4>
+                    <%= event.date %>
+                </h4>
+              </a></td>
+            </tr>
+          </table>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+</div>

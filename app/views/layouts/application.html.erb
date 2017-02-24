@@ -48,6 +48,16 @@
                    <% if current_user %>
                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
                    <% end %>
+                   <li class="pull-right" >
+                     <div style="margin-top: 10px;"> <!-- Search bar begins -->
+                       <%= form_tag({controller: "/welcome", action: "search"}, method: "get") do %>
+                         <%= text_field_tag :search_params, nil, placeholder: "Search", :style => "color: black; border-radius: 5px;" %>
+                         <%= button_tag(:id => "search", :title => "Search", :style => "background-color: inherit; border: 0px solid;") do %>
+                         <span class="glyphicon glyphicon-search"></i>
+                         <% end %>
+                       <% end %>
+                     </div> <!-- Search bar ends -->
+                   </li>
                  </ul>
                </div>
              </div>
