@@ -37,8 +37,8 @@
         <div class="col-lg-9">
                   <h2 class="cinzel"><strong><%= concert.title %></strong></h2>
                   <h4>
-                    <% if concert.review.length > 150 %>
-                      <%= truncate(concert.review, length: 150) %>
+                    <% if concert.review.length > 200 %>
+                      <%= truncate(concert.review, length: 200) %>
                       <%= link_to '...Read more', concert_path(concert), class: "read-more-#{concert.id}" %>
                     <% else %>
                       <%= concert.review %>

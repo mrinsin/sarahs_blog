@@ -38,8 +38,8 @@
         <div class="col-lg-9">
                   <h2 class="cinzel"><strong><%= book.title %></strong></h2>
                   <h4>
-                    <% if book.review.length > 150 %>
-                      <%= truncate(book.review, length: 150) %>
+                    <% if book.review.length > 200 %>
+                      <%= truncate(book.review, length: 200) %>
                       <%= link_to '...Read more', book_path(book), class: "read-more-#{book.id}" %>
                     <% else %>
                       <%= book.review %>

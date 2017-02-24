@@ -26,8 +26,8 @@
                   <%= image_tag concert.image.url(:large), :class => "concert_image", :style => "float: left; margin-right: 12px; max-height: 70%; min-width: 25%;" %>
                 <h2 class="cinzel"><strong><%= concert.title %></strong></h2>
                 <h4>
-                  <% if concert.review.length > 150 %>
-                    <%= truncate(concert.review, length: 150) %>
+                  <% if concert.review.length > 165 %>
+                    <%= truncate(concert.review, length: 165) %>
                     <%= link_to '...Read more', concert_path(concert), class: "read-more-#{concert.id}" %>
                   <% else %>
                     <%= concert.review %>
@@ -50,8 +50,8 @@
                 <%= image_tag book.image.url(:large), :class => "book_image", :style => "float: left; margin-right: 12px; margin-bottom: 5px; max-height: 65%; min-width: 25%;" %>
               <h2 class="cinzel"></strong><%= book.title %></strong></h2>
               <h4>
-                <% if book.review.length > 150 %>
-                  <%= truncate(book.review, length: 150) %>
+                <% if book.review.length > 165 %>
+                  <%= truncate(book.review, length: 165) %>
                   <%= link_to '...Read more', book_path(book), class: "read-more-#{book.id}" %>
                 <% else %>
                   <%= book.review %>
