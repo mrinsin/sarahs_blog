@@ -50,7 +50,7 @@
           <table>
             <tr>
               <td>
-                <a href="/book/<%= book.id %>">
+                <a href="/books/<%= book.id %>">
                   <hr>
                   <%= image_tag book.image.url(:large), :class => "concert_image", :style => "float: left; margin-right: 12px; max-height: 70%; min-width: 25%;" %>
                 <h2 class="cinzel"><strong><%= book.title %></strong></h2>
@@ -78,7 +78,7 @@
           <table>
             <tr>
               <td>
-                <a href="/event/<%= event.id %>">
+                <a href="/events/<%= event.id %>">
                   <hr>
                 <h2 class="cinzel"><strong><%= event.title %></strong></h2>
                 <h4>
