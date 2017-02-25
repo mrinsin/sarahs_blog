@@ -48,7 +48,7 @@
                    <% if current_user %>
                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
                    <% end %>
-                   <li class="pull-right" >
+                   <li>
                      <div style="margin-top: 10px;"> <!-- Search bar begins -->
                        <%= form_tag({controller: "/welcome", action: "search"}, method: "get") do %>
                          <%= text_field_tag :search_params, nil, placeholder: "Search", :style => "color: black; border-radius: 5px;" %>

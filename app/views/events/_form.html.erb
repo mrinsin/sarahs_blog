@@ -11,29 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :start_time %>
-    <%= f.datetime_select :start_time %>
 
-  </div>
+<table id="new_review">
+      <tbody>
+        <div class="col-md-4">
+        <tr>
+          <td><%= f.label :title %></td>
+          <td><%= f.text_field :title, :style => "height: 35px; color: black; width: 400px; margin-bottom: 20px; margin-top: 20px; margin-left: -250px;" %></td>
+        </tr>
+        <tr>
+          <td><%= f.datetime_select :start_time, :id => "datetime" %></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><%= f.label :description%></td>
+          <td><%= f.text_area :description, :style => "color:black; margin-left: -250px;"%></td>
+        </tr>
+        <tr>
+          <td><%= f.label :address %></td>
+          <td><%= f.text_field :address, :style => "height: 35px; color: black; width: 400px; margin-bottom: 20px; margin-top: 20px; margin-left: -250px;" %></td>
+        </tr>
+        <tr>
+          <td> <%= f.submit class: "btn btn-primary", :style => "width: 125px; font-size: 17px; margin-top: 10px; padding-left: -10px;" %> <%= button_to 'Back', '/welcome/calendar', :class => "btn btn-success", :method => "get", :style => "width: 120px; font-size: 17px; margin-top: 10px;" %></td>
+        </tr>
+      </tbody>
+</table>
 
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
