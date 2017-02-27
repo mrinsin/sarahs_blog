@@ -45,6 +45,9 @@
                       <%= book.review %>
                     <% end %>
                   </h4>
+                  <% if book.url.present? %>
+                    <h4><a href="<%=book.url%>" class="url">Check Out This Link</a></h4>
+                  <% end %>
                 </a></td>
               </tr>
             </table>

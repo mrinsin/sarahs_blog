@@ -44,6 +44,9 @@
                       <%= concert.review %>
                     <% end %>
                   </h4>
+                    <% if concert.url.present? %>
+                      <h4><a href="<%=concert.url%>" class="url">Check Out This Link</a></h4>
+                    <% end %>
                 </a></td>
               </tr>
             </table>

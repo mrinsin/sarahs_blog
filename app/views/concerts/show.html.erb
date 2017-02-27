@@ -17,8 +17,11 @@
   <article>
       <div class="container">
           <div class="row">
-              <div class="col-lg-10" style="margin-left: 6%;">
+              <div class="col-lg-10" style="margin-left: 6%; ">
                   <p class="review"><%= @concert.review %></p>
+                  <% if @concert.url.present? %>
+                    <p><a href="<%=@concert.url%>" class="review url">Check Out This Link</a></p>
+                  <% end %>
                   <br>
                   <div class="row">
                     <% if user_signed_in? %>
