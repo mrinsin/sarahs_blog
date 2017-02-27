@@ -5,12 +5,14 @@
   <article>
       <div class="container">
           <div class="row">
-              <div class="col-lg-10" style="margin-left: 6%;">
+              <div class="col-lg-10" style="margin-left: 6%; text-align: center">
                 <h1><%= @event.title %></h1>
                   <p class="review"><%= @event.start_time %></p>
                   <p class="review"><%= @event.description %></p>
                   <p class="review"><%= @event.address %></p>
-
+                  <% if @event.url.present? %>
+                    <a href="<%= @event.url %>" class="review url">Check Out The Link</a>
+                  <% end %>
                   <br>
                   <div class="row">
                     <% if user_signed_in? %>

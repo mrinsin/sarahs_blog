@@ -32,6 +32,10 @@
           <td><%= f.text_field :address, :style => "height: 35px; color: black; width: 400px; margin-bottom: 20px; margin-top: 20px; margin-left: -250px;" %></td>
         </tr>
         <tr>
+          <td><%= f.label :url %></td>
+          <td><%= f.text_field :url, :style => "height: 35px; color: black; width: 400px; margin-bottom: 20px; margin-top: 20px; margin-left: -250px;" %></td>
+        </tr>
+        <tr>
           <td> <%= f.submit class: "btn btn-primary", :style => "width: 125px; font-size: 17px; margin-top: 10px; padding-left: -10px;" %> <%= button_to 'Back', '/welcome/calendar', :class => "btn btn-success", :method => "get", :style => "width: 120px; font-size: 17px; margin-top: 10px;" %></td>
         </tr>
       </tbody>
