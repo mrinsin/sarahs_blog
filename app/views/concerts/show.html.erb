@@ -30,7 +30,7 @@
                       </div>
                     <% end %>
                     <div class="col-xs-1">
-                      <%= button_to 'Back', concerts_path, :class => "btn btn-primary", :method => :get  %>
+                        <%= button_to 'Back', request.referer, :class => "btn btn-primary", :method => :get  %>
                     </div>
                     <div class="col-sm-10"> <p></p></div>
               </div>

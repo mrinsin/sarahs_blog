@@ -1,3 +1,19 @@
 // Place all the styles related to the Concerts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-info:hover {
+  background: #5bc0de !important;
+}
+
+.btn-info:visited {
+  background: inherit !important;
+}
+
+.btn-danger:hover {
+  background: red !important;
+}
+
+.btn-danger:visited {
+  background: inherit !important;
+}
