@@ -37,6 +37,11 @@
   margin-bottom: 7px;
 }
 
+.search-bar {
+  position: relative;
+  left: 260px;
+}
+
 
 body {
   background-color: rgb(104,173,144) !important;

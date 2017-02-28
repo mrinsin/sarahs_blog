@@ -49,7 +49,7 @@
                        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
                    <% end %>
                    <li>
-                     <div style="margin-top: 10px;"> <!-- Search bar begins -->
+                     <div style="margin-top: 10px;" class="search-bar"> <!-- Search bar begins -->
                        <%= form_tag({controller: "/welcome", action: "search"}, method: "get") do %>
                          <%= text_field_tag :search_params, nil, placeholder: "Search", :style => "color: black; border-radius: 5px;" %>
                          <%= button_tag(:id => "search", :title => "Search", :style => "background-color: inherit; border: 0px solid;") do %>
