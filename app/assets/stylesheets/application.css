@@ -37,6 +37,13 @@
   margin-bottom: 7px;
 }
 
+.nav.navbar-nav {
+  float: none !important;
+}
+
+ul li:last-child {
+  float: right;
+}
 
 body {
   background-color: rgb(104,173,144) !important;
