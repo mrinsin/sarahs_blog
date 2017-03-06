@@ -12,9 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-
-//= require_tree .
+//= require underscore
+//= require gmaps/google
 //= require moment
 //= require fullcalendar
+//= require_tree .
 
 $('#calendar').fullCalendar({});
