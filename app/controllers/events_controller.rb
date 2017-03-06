@@ -10,7 +10,6 @@ class EventsController < ApplicationController
 
   end
 
-
   def get_events
     events = Event.all
     get_events = []
@@ -86,6 +85,17 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  # GOOGLE MAP
+  def map_location
+    @event = Event.find(params[:event_id])
+    @hash = Gmaps4rails.build_markers(@event) do |event, marker|
+      marker.lat(event.latitude)
+      marker.lng(event.longitude)
+      marker.infowindow("<em>" + event.address + "</em>")
+    end
+    render json: @hash.to_json
+  end
+  # END GOOGLE MAP
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -97,4 +107,6 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :start_time, :description, :address, :url)
     end
+
+
 end
