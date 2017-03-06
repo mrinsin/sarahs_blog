@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
+  <div class="flash-alert">
+    <% if flash[:alert] %>
+    <%= flash[:alert] %>
+    <% end %>
+  </div>
   <div class="col-lg-12">
     <div id="calendar" class="tab-pane fade in active"></div>
   </div>
