@@ -2,7 +2,11 @@
 
 <!-- outermost row -->
 <div class="row">
-
+  <div class="flash-alert">
+    <% if flash[:alert] %>
+    <%= flash[:alert] %>
+    <% end %>
+  </div>
   <!-- image row -->
   <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->

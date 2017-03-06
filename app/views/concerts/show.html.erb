@@ -1,6 +1,11 @@
 
 <!-- Page Header -->
   <!-- Set your background image for this header on the line below. -->
+  <div class="flash-alert">
+    <% if flash[:alert] %>
+    <%= flash[:alert] %>
+    <% end %>
+  </div>
   <header class="intro-header" style="background-image: url(<%= @concert.image.url %>)">
       <div class="container">
           <div class="row">
