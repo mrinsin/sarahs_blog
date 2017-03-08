@@ -17,7 +17,7 @@
     <div id="live_feed">
       <% if @concert_results.length > 0 %>
         <div class="col-lg-6">
-          <h1 class="cinzel">Concert Reviews</h1>
+          <h2 class="cinzel"><em>Concert Reviews</em></h2>
           <% @concert_results.each do |concert| %>
             <table>
               <tr>
@@ -45,7 +45,7 @@
   <div class="row">
     <% if @book_results.length > 0 %>
       <div class="col-lg-6">
-        <h1 class="cinzel">Book Reviews</h1>
+        <h2 class="cinzel"><em>Book Reviews</em></h2>
         <% @book_results.each do |book| %>
           <table>
             <tr>
@@ -73,7 +73,7 @@
   <div class="row">
     <% if @event_results.length > 0 %>
       <div class="col-lg-6">
-        <h1 class="cinzel">Events</h1>
+        <h2 class="cinzel"><em>Events</em></h2>
         <% @event_results.each do |event| %>
           <table>
             <tr>
