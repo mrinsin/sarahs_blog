@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
+  <div class="flash-alert">
+    <% if flash[:alert] %>
+    <%= flash[:alert] %>
+    <% end %>
+  </div>
     <div class="thumbnail text-center">
         <img src="/sarah.png" alt="" class="img-responsive">
         <div class="caption">

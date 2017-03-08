@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   #generates /concerts/get_events route
   resources :events do
     get :get_events, on: :collection
+    # GET /apartments/:apartment_id/map_locations
+    get 'map_location'
   end
 
 

@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row">
-
+  <div class="flash-alert">
+    <% if flash[:alert] %>
+    <%= flash[:alert] %>
+    <% end %>
+  </div>
     <header class="intro-header" style="background-image: url(/concerts.png)">
         <div class="container">
             <div class="row">
