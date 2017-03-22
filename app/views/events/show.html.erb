@@ -15,8 +15,13 @@
                   <p class="review"><%= @event.description %></p>
                   <p class="review"><%= @event.address %></p>
                   <% if @event.url.present? %>
-                    <a href="<%= @event.url %>" class="review url">Check Out The Link</a>
+                    <a href="<%= @event.url %>" class="review url">URL: <%= @event.url.to_s %></a>
                   <% end %>
+                  <div class="row">
+                    <!-- GOOGLE MAPS -->
+                    <div id="event_map" data-event-id="<%=@event.id%>" style="width:600px; height:500px; margin-left: 180px;"></div>
+                    <!--END GOOGLE MAPS -->
+                  </div>
                   <br>
                   <div class="row">
                     <% if user_signed_in? %>
@@ -35,10 +40,7 @@
               </div>
           </div>
       </div>
-      <!-- GOOGLE MAPS -->
-      <div id="event_map" data-event-id="<%=@event.id%>" style="width:400px;height:400px;"></div>
-      <!--END GOOGLE MAPS -->
-    </div>
+
   </article>
 
 
