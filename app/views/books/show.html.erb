@@ -28,7 +28,7 @@
                     <%= @book.review %>
                   </p>
                   <% if @book.url.present? %>
-                    <p><a href="<%=@book.url%>" class="review url">Check Out This Link</a></p>
+                    <p><a href="<%=@book.url%>" class="review url">URL: <%= @event.url.to_s %></a></p>
                   <% end %>
                   <br>
                   <div class="row">
