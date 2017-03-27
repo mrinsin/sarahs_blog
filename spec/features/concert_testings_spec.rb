@@ -2,11 +2,10 @@ require 'rails_helper'
 
 RSpec.feature "ConcertTestings", type: :feature do
   context "Creating concert reviews" do
-    Steps "To add  book review" do
+    Steps "To add book review" do
 
       Given "I am a registered user" do
         visit '/users/sign_up'
-        click_on "Sign up"
         fill_in "Email", with: "mrin@sin.com"
         fill_in "Password", with: "mrinsin"
         fill_in "Password confirmation", with: "mrinsin"
